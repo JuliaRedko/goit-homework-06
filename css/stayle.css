@@ -510,11 +510,12 @@ body {
 }
  /* Footer form */
 .footer-form {
+    display: flex;
    padding-left: 80px;
 }
 
 .footer-form-title {
-   
+  position: absolute;
     margin-bottom: 16px;
     font-weight: 500;
     font-size: 16px;
@@ -525,6 +526,8 @@ body {
 
 .footer-form-field {
     display: flex;
+    align-items: center;
+    
 
 }
 
@@ -535,7 +538,6 @@ body {
     padding: 8px 212px 8px 16px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background-color: transparent;
-    
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
 }
@@ -546,7 +548,6 @@ body {
     line-height: 2px;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.6);
-
 }
 
 .subscribe-submit {
@@ -563,12 +564,21 @@ body {
     border: none;
     border-radius: 4px;
     margin:8px 64px 24px;
-    min-width: 165px;
+    width: 165px;
+    height: 40px;
     padding:8px 24px;
     gap: 16px;
     color: var(--white-text-color);
     background-color: var(--active-color);
+    transition: background cubic-bezier(0.4, 0, 0.2, 1),border cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.subscribe-submit:hover 
+.subscribe-submit:focus {
+ background: var(--acsent-color);
+ border: var(--acsent-color);
+}
+        
 
 .subscride-icon {
     display: flex;
@@ -640,7 +650,6 @@ body {
     transition-property: box-shadow;
     transition-duration: var(--transition-main);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
 }
 
 .portfolio-link:is(:hover, :focus) {
@@ -699,7 +708,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     font-size: 20px;
     line-height: 1.2;
     color: var(--title-text-color);
-    padding-left: 16;
+    padding-left: 16px;
     margin-bottom: var(--basic-margin-text);
 }
 
@@ -716,18 +725,17 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     height: 100%;
     visibility: visible;
     transition: opacity var(--transition-main) cubic-bezier(0.4, 0, 0.2, 1), visibility var(--transition-main) cubic-bezier(0.4, 0, 0.2, 1);
-    
 }
 
 .modal {
     width: 408px;
     min-height: 576px;
-    padding: 24px;
+    padding: 72px 24px 24px;
     background: var(--dairy-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     transition: transform var(--transition-main) cubic-bezier(0.4, 0, 0.2, 1);
@@ -736,6 +744,8 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 .modal-close {
     width: 24px;
     height: 24px;
+    top: 24px;
+    right: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -743,10 +753,11 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     border-radius: 50%;
     background: var(--cornflawer-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
     transition: backround cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close:hover
+.modal-close:hover,
 .modal-close:focus {
     background: var(--active-color);
 }
@@ -756,7 +767,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     fill: var(--title-text-color);
 }
 
-.icon-close:hover
+.icon-close:hover,
 .icon-close:focus {
     fill: var(--white-text-color);
 }
@@ -774,7 +785,6 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 .modal-title {
     font-weight: 500;
     text-align: center;
-    padding-top: 72px;
     margin-bottom: 16px;
 }
 
@@ -782,6 +792,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 }
 
 .form-label {
+    display: block;
     margin-bottom: 8px;
 }
 
@@ -816,7 +827,6 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     border-radius: 4px;
     box-sizing: border-box;
     padding-left: 42px;
-    margin-bottom: 20px;
     transition: border-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
