@@ -511,12 +511,11 @@ body {
  /* Footer form */
 .footer-form {
     display: flex;
-   padding-left: 80px;
+    flex-direction: column;
+    margin-left: 80px;
 }
 
 .footer-form-title {
-  position: absolute;
-    margin-bottom: 16px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -527,8 +526,6 @@ body {
 .footer-form-field {
     display: flex;
     align-items: center;
-    
-
 }
 
 .footer-form-input {
@@ -548,6 +545,10 @@ body {
     line-height: 2px;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-form-input:focus {
+    border-style: none;
 }
 
 .subscribe-submit {
@@ -729,7 +730,8 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 
 .modal {
     width: 408px;
-    min-height: 576px;
+    height: 584px;
+    
     padding: 72px 24px 24px;
     background: var(--dairy-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -750,11 +752,12 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     justify-content: center;
     align-items: center;
     margin-left: auto;
+    cursor: pointer;
     border-radius: 50%;
     background: var(--cornflawer-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
     position: absolute;
-    transition: backround cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close:hover,
@@ -807,9 +810,8 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     display: block;
     margin-bottom: 4px;
     color: var(--light-slate);
-    font-weight: 400px;
     font-size: 12px;
-    line-height: 1.7;
+    line-height: 1.17;
     letter-spacing: 0,04em;
 }
 
@@ -827,7 +829,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     border-radius: 4px;
     box-sizing: border-box;
     padding-left: 42px;
-    transition: border-color cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus {
@@ -845,18 +847,18 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     display: block;
     top: 11px;
     left: 16px;
-    transition: fill cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
 .modal-form-message {
+    display: block;
     width: 100%;
     height: 120px;
     padding: 8px 16px;
     resize: none;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    margin-bottom: 16px;
 }
 
 .modal-form-message:focus {
@@ -872,6 +874,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     line-height: 1.3;
     letter-spacing: 0.04em;
     color: #757575;
+    margin-top: 16px;
     margin-bottom: 24px;
 }
 
@@ -897,6 +900,12 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 
 .modal-form-check:checked+.modal-form-check-desc::before {
     outline: 1.25px solid var(--acsent-color);
+}
+
+.form-btn:hover,
+.form-btn:focus {
+    background: var(--acsent-color);
+
 }
 
 .modal-police-box {
