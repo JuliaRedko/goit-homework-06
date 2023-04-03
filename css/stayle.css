@@ -572,13 +572,13 @@ body {
     gap: 16px;
     color: var(--white-text-color);
     background-color: var(--active-color);
-    transition: background cubic-bezier(0.4, 0, 0.2, 1),border cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .subscribe-submit:hover, 
 .subscribe-submit:focus {
  background: var(--acsent-color);
- border: var(--active-color);
+
 }
         
 
@@ -766,17 +766,19 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 .modal-close:hover,
 .modal-close:focus {
     background: var(--active-color);
-    fill: var(--white-text-color);
 }
 
 
 .icon-close {
-    color: currentColor;
     fill: var(--title-text-color);
-    
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-close:hover,
+.modal-close:hover .icon-close,
+.modal-closee:focus .icon-close {
+    fill: var(--white-text-color);
+}
+
 .icon-close:focus {
     fill: currentColor
 }
@@ -893,11 +895,12 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
     border-radius: 2px;
     cursor: pointer;
     margin-right: 8px;
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-check:checked + .modal-form-check-desc::before {
-    background: #404BBF;
-    border: 1.25px solid #404BBF;
+    background: var(--acsent-color);
+    border-color: 1.25px solid var(--acsent-color);
     border-radius: 2px;
     background-position: center;
     background-repeat: no-repeat;
@@ -905,7 +908,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.1
 }
 
 .modal-form-check:checked+.modal-form-check-desc::before {
-    outline: 1.25px solid var(--acsent-color);
+    outline-color: var(--acsent-color);
 }
 
 .form-btn:hover,
